@@ -64,5 +64,5 @@ Changing those to wrong ID or 0xFFFFFFFF crashes game!
 **Earrings Equipped:** 0x34 - 0x37  
 **Medal Equipped:**	0x38 - 0x3B  
 
-**Time:** 0x3C - 0x7F  	    
+**Playtime:** 0x3C - 0x7F  	    
 In seconds
