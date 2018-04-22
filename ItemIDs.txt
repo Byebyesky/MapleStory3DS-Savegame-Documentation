@@ -1,0 +1,590 @@
+------------Items---------------
+IDs found in Item_Name_JP.gmm (IDs here are little endian)
+
+----English----
+
+90010000 Silver Ring
+91010000 Gold Heart Ring
+92010000 Heart Ring
+93010000 Bear Ring
+94010000 Skull Ring
+95010000 Jade Ring
+96010000 Butterfly Ring
+97010000 Daisy Ring
+98010000 Pink Candy Ring
+99010000 Clover Ring
+9A010000 Gold Ring
+9B010000 Moonstone Ring
+9C010000 Crescent Moon Ring
+9D010000 Protection Ring
+9E010000 Kurishia’s Ring
+9F010000 Almighty Ring
+A0010000 Dark Angel Ring
+A1010000 Zenumist Member Ring
+A2010000 Alcadno Member Ring
+F4010000 Silver Earrings
+F5010000 Sapphire Earrings
+F6010000 Amethyst Earrings
+F7010000 Gold Earrings
+F8010000 Cross Earrings
+F9010000 Crystal Earrings
+FA010000 Star Earrings
+FB010000 Blue Moon Earrings
+FC010000 Strawberry Earrings
+FD010000 Skull Earrings
+FE010000 Metal Heart Earrings
+FF010000 Snowflake Earrings
+00020000 Guardian Stone Earrings
+01020000 Emerald Earrings
+04020000 Diamond Earrings
+58020000 Small Red Potion
+59020000 Red Potion
+5A020000 White Potion
+5B020000 Large Red Potion
+62020000 Small Blue Potion
+63020000 Blue Potion
+64020000 Large Blue Potion
+6C020000 Power Elixir
+76020000 Antidote
+BA020000 Empty Slot 1
+BB020000 Empty Slot 2
+8A020000 Dynamite
+8B020000 All Cure Potion
+BC020000 1 Meso
+BD020000 10 Mesos
+BE020000 50 Mesos
+BF020000 100 Mesos
+C0020000 500 Mesos
+C1020000 1000 Mesos
+B0040000 Dark Chain Medal
+B1040000 Storm Training Medal
+B2040000 Fire Rush Medal
+B3040000 Raging Rush Medal
+B4040000 Rapid Blow Medal
+B5040000 Stinger Medal
+B6040000 Bear Medal
+B7040000 Spirit System Medal
+B8040000 Genesis Medal
+B9040000 Illusion Dash Medal
+BA040000 Magical Guard Medal
+BB040000 noname
+BC040000 noname
+BD040000 noname
+BE040000 noname
+BF040000 noname
+C0040000 noname
+C1040000 noname
+C2040000 noname
+C3040000 noname
+C4040000 noname
+C5040000 noname
+C6040000 noname
+C7040000 noname
+C8040000 noname
+C9040000 noname
+CA040000 noname
+CB040000 noname
+CC040000 noname
+CD040000 noname
+CE040000 noname
+CF040000 noname
+D0040000 noname
+D1040000 Tricked Medal
+D2040000 Merchant Medal
+D3040000 noname
+D4040000 Earring Collector Medal
+D5040000 Ring Collector Medal
+D6040000 Gladiator Medal
+D7040000 Massacre Medal
+D8040000 Pack Rat Medal
+D9040000 Treasure Hunter Medal
+DA040000 Millionaire Medal
+DB040000 Alchemist Medal
+DC040000 noname
+DD040000 Strong Man Medal
+DE040000 Glory Medal
+DF040000 noname
+E0040000 noname
+E1040000 noname
+E2040000 noname
+E3040000 noname
+E4040000 noname
+E5040000 noname
+E6040000 noname
+E7040000 noname
+E8040000 Fancy Dresser Medal
+E9040000 Rope Clinger Medal
+EA040000 Spiral Medal
+EB040000 Detoxification Medal
+EC040000 Barrier Medal
+ED040000 Shoe Collector Medal
+EE040000 noname
+EF040000 Cold Air Medal
+F0040000 Nintendo 3DS Medal
+F1040000 noname
+F2040000 Jump Medal
+F3040000 Weapon Collector Medal
+F4040000 noname
+F5040000 noname
+F6040000 Armor Collector Medal
+F7040000 Dark Medal
+F8040000 noname
+F9040000 noname
+FA040000 Hat Collector Medal
+FB040000 noname
+FC040000 Immobility Medal
+FD040000 noname
+FE040000 noname
+FF040000 noname
+00050000 noname
+01050000 noname
+02050000 noname
+03050000 Rest Medal
+04050000 noname
+05050000 Beginner Medal
+06050000 Apprentice Medal
+07050000 Expert Medal
+08050000 Appreciation Medal
+09050000 Guardian Medal
+0A050000 noname
+0B050000 noname
+0C050000 noname
+0D050000 Counselor Medal
+0E050000 noname
+0F050000 noname
+40420F00 Training Staff
+41420F00 Sapphire Staff
+42420F00 Wizard Staff
+43420F00 Petal Staff
+44420F00 Hall Staff
+45420F00 Arc Staff
+46420F00 Mystic Cane
+47420F00 Evil Wings
+51420F00 Crimson Arcanon
+48420F00 Revolution Staff
+49420F00 Bain Wings
+4A420F00 Crow Staff
+52420F00 Revolution Staff
+4B420F00 Dark Ritual
+53420F00 Lucky Staff
+4C420F00 Blue Marine
+54420F00 Angel Wings
+4D420F00 Dragon Staff
+55420F00 Doomsday Staff
+4E420F00 Alma Von Leon Staff
+56420F00 Orange Staff
+4F420F00 Eligos Bloody Rod
+57420F00 Dark Dragon Staff
+58420F00 Aeas Hand
+50420F00 Dragon Tail War Staff
+A4420F00 Training Clothes
+A5420F00 Twinkle Wing
+A6420F00 Miracle Shiba
+B5420F00 Cutie Sailor
+A7420F00 Moonlight
+A8420F00 Dark Piettra
+B6420F00 Bunny Costume
+A9420F00 Calaf
+AA420F00 Lotus
+B7420F00 Duck Costume
+AB420F00 Requierre
+AC420F00 Enigma
+B8420F00 Oriental Fury Coat
+AD420F00 Stuffing
+AE420F00 Bazura
+B9420F00 Maid Cat Costume
+AF420F00 Lumati
+B0420F00 Mystic
+B1420F00 Reverse Myst
+B2420F00 Alma Von Leon Battle Suit
+B3420F00 Vepar Bloody Mail
+B4420F00 Dragon Tail Mage Sallet
+BA420F00 Kimono
+08430F00 Legendary Gold Ring
+09430F00 Tinkle Ribbon
+0A430F00 Magical
+19430F00 Red Ribbon
+0B430F00 Clown Hat
+0C430F00 Tweed Hair Band
+1A430F00 Rabbit Hat
+0D430F00 Golden Fence Lit
+0E430F00 Rejero
+1B430F00 Duck Hat
+0F430F00 Serafisu
+10430F00 Chiton Fence Lit
+1C430F00 Asian Tiara
+11430F00 Star Fine
+12430F00 Baruheddo
+1D430F00 Catear
+13430F00 Corn Brio
+14430F00 Dragon Crown
+15430F00 Reverse Coral
+16430F00 Arcane Walker
+17430F00 Bloody Gear
+18430F00 Dragon tail Support Let
+1E430F00 Fox Kamen
+6C430F00 Training Shoes
+6D430F00 Star Wing Shoes
+6E430F00 Chestnut Shea Shoes
+7A430F00 Sailor Shoes
+6F430F00 Sweet Angel Wings
+7B430F00 Rabbit Shoes
+70430F00 Freedom Shoes
+7C430F00 Duck Boots
+71430F00 Magical boots
+72430F00 Ron Tano shoes
+7D430F00 Flower Petanko shoes
+73430F00 Magic Shoes
+74430F00 Raven Horn Chaser Boots
+7E430F00 Maid Heels
+75430F00 Varr Shoes
+76430F00 Neli Shoes
+77430F00 Alma Von Leon War Boots
+78430F00 Bloody Boots
+79430F00 Dragon Tail Shoes
+7F430F00 Geta
+28460F00 Bridge Key
+29460F00 Soul Box
+2A460F00 Empty Jug
+2B460F00 Eternal Life Flask
+2C460F00 Mysterious Pitcher
+2D460F00 Training Tree
+2E460F00 Holy Water
+2F460F00 Memory Card
+30460F00 Mu Lung Dojo’s Secret Technique
+31460F00 Cornian Marrow
+32460F00 Wyvern Toenail
+33460F00 Horntail Jewel
+34460F00 Return Stone
+35460F00 Air Bubble
+36460F00 Transformation Potion
+37460F00 Energy Cartridge
+38460F00 Energy Cartridge
+39460F00 Energy Cartridge
+3A460F00 Energy Cartridge
+3B460F00 Wind Stone
+3C460F00 Water Stone
+3D460F00 Fire Stone
+3E460F00 Earth Stone
+56470F00 Pharaoh’s Key
+57470F00 Wooden Mallet
+58470F00 Scorpion’s Stinger
+59470F00 Ran’s Earrings
+5B470F00 Hard Horn
+5C470F00 Nependeath Nectar
+5D470F00 Wires
+5E470F00 Mosquito Wings
+5F470F00 Rash’s Furball
+60470F00 Old Key
+61470F00 Village Chiefs’ Wisdom
+62470F00 Tae Gong’s Rod
+63470F00 Shrimp Meat
+64470F00 Shark Tooth
+65470F00 Rue Ore
+66470F00 Purple Poopa Egg
+67470F00 Yellow Poopa Egg
+68470F00 Red Poopa Egg
+69470F00 Blue Poopa Egg
+6A470F00 Photo of Ulrika
+6B470F00 Pink Popstar Photo
+6C470F00 Purple Popstar Photo
+6D470F00 Nintendo 3DS Console
+6E470F00 Maple Story 3DS
+BC020000 Earrings
+BD020000 Medal
+BE020000 Shoes
+BF020000 Ring
+
+-----Japanese----
+
+90010000 シルバーウィングリング
+91010000 ゴールドハートリング
+92010000 ハートリング
+93010000 クマの指輪
+94010000 ドクロの指輪
+95010000 ヒスイの指輪
+96010000 蝶の指輪
+97010000 ﾏｰｶﾞﾚｯﾄのﾌﾗﾜｰﾘﾝｸﾞ
+98010000 ﾋﾟﾝｸｷｬﾝﾃﾞｨｰﾘﾝｸﾞ
+99010000 クローバーの指輪
+9A010000 黄金の指輪
+9B010000 ムーンストーンリング
+9C010000 三日月の指輪
+9D010000 防御の指輪
+9E010000 クリシアの指輪
+9F010000 オールマイティーリング
+A0010000 ダークエンジェルの指輪
+A1010000 ｼﾞｪﾆﾐｽﾄの会員ﾘﾝｸﾞ
+A2010000 ｱﾙｶﾄﾞﾉの会員ﾘﾝｸﾞ
+F4010000 シルバーイヤリング
+F5010000 サファイアイヤリング
+F6010000 紫水晶イヤリング
+F7010000 ｺﾞｰﾙﾄﾞﾘﾝｸﾞｲﾔﾘﾝｸﾞ
+F8010000 クロスイヤリング
+F9010000 クリスタルイヤリング
+FA010000 星のイヤリング
+FB010000 ブルームーンイヤリング
+FC010000 イチゴのイヤリング
+FD010000 ドクロイヤリング
+FE010000 メタルハートイヤリング
+FF010000 雪花イヤリング
+00020000 守護石イヤリング
+01020000 エメラルドイヤリング
+04020000 ダイヤモンドイヤリング
+58020000 小さな赤い薬
+59020000 赤い薬
+5A020000 白い薬
+5B020000 高級な赤い薬
+62020000 小さな青い薬
+63020000 青い薬
+64020000 高級な青い薬
+6C020000 パワーエリクサー
+76020000 解毒剤
+BA020000 空スロット１
+BB020000 空スロット２
+8A020000 ダイナマイト
+8B020000 万病治療薬
+BC020000 １メル
+BD020000 １０メル
+BE020000 ５０メル
+BF020000 １００メル
+C0020000 ５００メル
+C1020000 １０００メル
+B0040000 歓迎のメダル
+B1040000 グルグルメダル
+B2040000 放火魔のメダル
+B3040000 乱舞のメダル
+B4040000 ブローのメダル
+B5040000 ﾌｧﾗﾝｸｽのﾒﾀﾞﾙ
+B6040000 熊のメダル
+B7040000 精霊のメダル
+B8040000 天使のメダル
+B9040000 残映のメダル
+BA040000 防御のメダル
+BB040000 noname
+BC040000 noname
+BD040000 noname
+BE040000 noname
+BF040000 noname
+C0040000 noname
+C1040000 noname
+C2040000 noname
+C3040000 noname
+C4040000 noname
+C5040000 noname
+C6040000 noname
+C7040000 noname
+C8040000 noname
+C9040000 noname
+CA040000 noname
+CB040000 noname
+CC040000 noname
+CD040000 noname
+CE040000 noname
+CF040000 noname
+D0040000 noname
+D1040000 へそ曲がりメダル
+D2040000 商人のメダル
+D3040000 noname
+D4040000 ｲﾔﾘﾝｸﾞｺﾚｸﾀｰのﾒﾀﾞﾙ
+D5040000 指輪ｺﾚｸﾀｰのﾒﾀﾞﾙ
+D6040000 剣闘士のメダル
+D7040000 虐殺者のメダル
+D8040000 浪費のメダル
+D9040000 冒険のメダル
+DA040000 大富豪のメダル
+DB040000 錬金術師のメダル
+DC040000 noname
+DD040000 強者のメダル
+DE040000 栄光のメダル
+DF040000 noname
+E0040000 noname
+E1040000 noname
+E2040000 noname
+E3040000 noname
+E4040000 noname
+E5040000 noname
+E6040000 noname
+E7040000 noname
+E8040000 ｵｼｬﾚ番長のﾒﾀﾞﾙ
+E9040000 忍耐のメダル
+EA040000 渦巻のメダル
+EB040000 解毒のメダル
+EC040000 結界のメダル
+ED040000 靴ｺﾚｸﾀｰのﾒﾀﾞﾙ
+EE040000 noname
+EF040000 冷気のメダル
+F0040000 ﾆﾝﾃﾝﾄﾞｰ3DSﾒﾀﾞﾙ
+F1040000 noname
+F2040000 スプリングメダル
+F3040000 武器ｺﾚｸﾀｰのﾒﾀﾞﾙ
+F4040000 noname
+F5040000 noname
+F6040000 鎧ｺﾚｸﾀｰのﾒﾀﾞﾙ
+F7040000 暗黒のメダル
+F8040000 noname
+F9040000 noname
+FA040000 帽子ｺﾚｸﾀｰのﾒﾀﾞﾙ
+FB040000 noname
+FC040000 不動のメダル
+FD040000 noname
+FE040000 noname
+FF040000 noname
+00050000 noname
+01050000 noname
+02050000 noname
+03050000 休息のメダル
+04050000 noname
+05050000 まだまだ下級者ﾒﾀﾞﾙ
+06050000 やっと中級者メダル
+07050000 ついに上級者メダル
+08050000 感謝のメダル
+09050000 守護者のメダル
+0A050000 noname
+0B050000 noname
+0C050000 noname
+0D050000 相談役のメダル
+0E050000 noname
+0F050000 noname
+40420F00 修練のスタッフ
+41420F00 サファイアスタッフ
+42420F00 ウィジャードスタッフ
+43420F00 プリクルスタッフ
+44420F00 ｻｰｸﾙﾌﾚｲﾑｽﾀｯﾌ
+45420F00 アークスタッフ
+46420F00 黄金錫杖
+47420F00 エビルウイング
+51420F00 ｸﾘﾑｿﾞﾝｱｰｸｽﾀｯﾌ
+48420F00 ﾚﾎﾞﾘｭｰｼｮﾝｽﾀｯﾌ
+49420F00 ベインウィングス
+4A420F00 クロウスタッフ
+52420F00 ｴﾎﾞﾘｭｰｼｮﾝｽﾀｯﾌ
+4B420F00 レイドンスタッフ
+53420F00 マックファイスタッフ
+4C420F00 ブルーマリン
+54420F00 アクアウィングス
+4D420F00 ドラゴンスタッフ
+55420F00 フレームスタッフ
+4E420F00 アルマスタッフ
+56420F00 オレンジスタッフ
+4F420F00 ブラッディ―ロード
+57420F00 ダークドラゴンスタッフ
+58420F00 インディゴロード
+50420F00 ドラゴンテイルウォー
+A4420F00 修練の服
+A5420F00 ティンクルウィング
+A6420F00 ミラクルシバ
+B5420F00 キューティーセーラー
+A7420F00 ムーンライト
+A8420F00 ピエルタ
+B6420F00 うさぎ人形服
+A9420F00 カルラス
+AA420F00 ロータス
+B7420F00 かも人形服
+AB420F00 ルーモス
+AC420F00 クリシア
+B8420F00 アジアンドレス
+AD420F00 スタッフィング
+AE420F00 バジュラ
+B9420F00 メイドキャット
+AF420F00 ルイマリ
+B0420F00 ミスティック
+B1420F00 リバースミスト
+B2420F00 アルマバトル
+B3420F00 ブラッディメイル
+B4420F00 ドラゴンテイルメイジ
+BA420F00 着物
+08430F00 ゴールドリング
+09430F00 ティンクルリボン
+0A430F00 マジカル
+19430F00 レッドリボン
+0B430F00 ピエロ帽
+0C430F00 ツイードヘアバンド
+1A430F00 うさぎの帽子
+0D430F00 ゴールデンサクリット
+0E430F00 レジェーロ
+1B430F00 かも帽子
+0F430F00 セラフィス
+10430F00 キトンサクリット
+1C430F00 アジアンティアラ
+11430F00 スターフィーネ
+12430F00 バルヘッド
+1D430F00 キャットイヤー
+13430F00 コーンブリオ
+14430F00 ドラゴンクラウン
+15430F00 リバースコーラル
+16430F00 アーケインウォーカー
+17430F00 ブラッディギア
+18430F00 ドラゴンテイルサレット
+1E430F00 狐の仮面
+6C430F00 修練のシューズ
+6D430F00 スターウィングシューズ
+6E430F00 クリシアシューズ
+7A430F00 セーラーシューズ
+6F430F00 ｽｳｨｰﾄｴﾝｼﾞｪﾙｳｨﾝｸﾞ
+7B430F00 うさぎのシューズ
+70430F00 フリードのシューズ
+7C430F00 かもあしブーツ
+71430F00 マジカルブーツ
+72430F00 ロンタノシューズ
+7D430F00 フラワーぺたんこ靴
+73430F00 マジックシューズ
+74430F00 ﾚｲｳﾞﾝﾁｪｲｻｰﾌﾞｰﾂ
+7E430F00 メイドヒール
+75430F00 ミスティックシューズ
+76430F00 ネリーシューズ
+77430F00 アルマバトルブーツ
+78430F00 ブラッディブーツ
+79430F00 ドラゴンテイルシューズ
+7F430F00 下駄
+28460F00 跳ね橋のカギ
+29460F00 魂の箱
+2A460F00 空の水差し
+2B460F00 エターナルフラスコ
+2C460F00 不思議な水差し
+2D460F00 錬成でつくられた枝木
+2E460F00 アリアントの聖水
+2F460F00 メモリーカード
+30460F00 武陵道場の秘技
+31460F00 リザードマンの浄水
+32460F00 ワイバーンの爪
+33460F00 ホーンテイルの宝玉
+34460F00 帰還の石
+35460F00 永久空気袋
+36460F00 変身の秘薬
+37460F00 エネルギーカートリッジ
+38460F00 エネルギーカートリッジ
+39460F00 エネルギーカートリッジ
+3A460F00 エネルギーカートリッジ
+3B460F00 風の石
+3C460F00 水の石
+3D460F00 火の石
+3E460F00 地の石
+56470F00 ファラオのカギ
+57470F00 木づち
+58470F00 スコルピオンの毒針
+59470F00 ランのイヤリング
+5B470F00 堅い角
+5C470F00 ネペンデスの蜜
+5D470F00 電線束
+5E470F00 蚊の羽
+5F470F00 モココの毛玉
+60470F00 古いカギ
+61470F00 先代村長の遺言
+62470F00 漁師爺の釣竿
+63470F00 シュリンプの肉
+64470F00 サメのキバ
+65470F00 ルー鉱石
+66470F00 紫のパファーの卵
+67470F00 黄色のパファーの卵
+68470F00 赤のパファーの卵
+69470F00 青のパファーの卵
+6A470F00 ウルリカの写真
+6B470F00 セスターのピンクの写真
+6C470F00 セスターのパープルの写真
+6D470F00 ニンテンドー３ＤＳ本体
+6E470F00 ３ＤＳメイプルストーリー
+BC020000 イヤリング
+BD020000 メダル
+BE020000 靴
+BF020000 指輪

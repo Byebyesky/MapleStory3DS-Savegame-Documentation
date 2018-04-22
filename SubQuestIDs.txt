@@ -1,0 +1,61 @@
+--------Sub Quests-------------
+
+IDs found in Quest_title_JP.gmm (IDs here are little endian)
+
+----English----
+
+898A0100 = Lost Earring
+8A8A0100 = Cause Of The Trouble
+8B8A0100 = Missing Hella
+8C8A0100 = Hella Is Safe
+8D8A0100 = Lonely Moppie
+8E8A0100 = Nependeath’s Remedy
+8F8A0100 = Antidote Needed
+908A0100 = Red Scorpions’ Treasure
+918A0100 = A Pirate In The Desert
+928A0100 = The Need For Life Alchemy
+938A0100 = Problems With Life Alchemy
+948A0100 = Lloyd’s Research on Keeny
+958A0100 = Too Many Mosquitoes
+968A0100 = A Pill Is Necessary
+978A0100 = Former Village Chief’s Testament
+988A0100 = Monster In The Forest
+998A0100 = Grandfather’s Fishing Rod
+9A8A0100 = Tae Gong’s Love For His Wife
+9B8A0100 = Menace of Shaqra
+9C8A0100 = Cease Living
+9D8A0100 = Broken Telephone Booth
+9E8A0100 = No Content
+A08A0100 = No Content
+A18A0100 = Bring Poopa Egg 1
+A28A0100 = Bring Poopa Egg 2
+A38A0100 = Bring Poopa Egg 3
+
+----Japanese----
+
+898A0100 = 失くしたイヤリング
+8A8A0100 = 故障の原因
+8B8A0100 = 行方不明になったヘラー
+8C8A0100 = ヘラーの安否を伝える
+8D8A0100 = 寂しそうなボンちゃん
+8E8A0100 = ネペンデスの秘薬
+8F8A0100 = 解毒剤が必要
+908A0100 = 赤サソリ団の宝
+918A0100 = 砂漠の海賊
+928A0100 = 生命錬金の必要性
+938A0100 = 生命錬金の問題点
+948A0100 = キニのロイド研究
+958A0100 = 蚊が多すぎる
+968A0100 = 毛玉が必要
+978A0100 = 先代村長の遺言状
+988A0100 = 森の中のモンスター
+998A0100 = 漁師爺の釣竿
+9A8A0100 = 漁師爺の妻への愛
+9B8A0100 = シャクラーの脅威
+9C8A0100 = 絶えゆく命
+9D8A0100 = 故障した電話ボックス
+9E8A0100 = 内容なし
+A08A0100 = 内容なし
+A18A0100 = ﾊﾟﾌｧｰの卵を持ってきて1
+A28A0100 = ﾊﾟﾌｧｰの卵を持ってきて2
+A38A0100 = ﾊﾟﾌｧｰの卵を持ってきて3
