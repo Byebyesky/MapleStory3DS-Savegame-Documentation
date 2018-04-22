@@ -54,15 +54,15 @@ See [ItemIDs](https://github.com/Byebyesky/MapleStory3DS-Savegame-Documentation/
 Visible Items:  
 Changing those to wrong ID or 0xFFFFFFFF crashes game!
 
-Robe Equipped: 0x20 - 0x23
-Hat Equipped: 0x24 - 0x27
+Robe Equipped: 0x20 - 0x23  
+Hat Equipped: 0x24 - 0x27  
 Weapon Equipped: 0x28 - 0x2B  
 
 Invisible Items:  
-Boots Equipped: 0x2C - 0x2F
-Ring Equipped: 0x30 - 0x33
-Earrings Equipped: 0x34 - 0x37
-Medal Equipped:	0x38 - 0x3B
+Boots Equipped: 0x2C - 0x2F  
+Ring Equipped: 0x30 - 0x33  
+Earrings Equipped: 0x34 - 0x37  
+Medal Equipped:	0x38 - 0x3B  
 
 Time: 0x3C - 0x7F  	    
 In seconds
