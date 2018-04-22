@@ -11,27 +11,27 @@ TODO
 TODO
 ### inventory.dat
 
-**money:** 0x08 - 0x0B  
+**Money:** 0x08 - 0x0B  
 
 See [ItemIDs](https://github.com/Byebyesky/MapleStory3DS-Savegame-Documentation/blob/master/ItemIDs.txt) for available IDs  
 
 ### mainQuest.dat
 
-**quest:** 0x00  
+**Quest:** 0x00  
 See [MainQuestIDs](https://github.com/Byebyesky/MapleStory3DS-Savegame-Documentation/blob/master/MainQuestIDs.txt)  
 
 ### playerData.dat
 
-**level:** 0x00  
+**Level:** 0x00  
 Ingame, changeing breaks EXPBar but grants the skills
 
-**exp:** 0x04 - 0x07  
+**Exp:** 0x04 - 0x07  
 EXPBar seems to normalize as soon as 1 ememy is killed
 
-**hp:** 0x08 - 0x09  
+**Hp:** 0x08 - 0x09  
 Current HP, max HP seems to be specified in the romfs(?)  
 
-**mp:** 0x0A - 0x0B  
+**Mp:** 0x0A - 0x0B  
 Current MP, max MP seems to be specified in the romfs(?)  
 
 ### subQuest.dat
@@ -41,10 +41,10 @@ See [SubQuestIDs](https://github.com/Byebyesky/MapleStory3DS-Savegame-Documentat
 
 ### summary_x.dat
 
-**name:** 0x00 - 0x0E  
+**Name:** 0x00 - 0x0E  
 In UTF-16  
 
-**level:** 0x1B  
+**Level:** 0x1B  
 Only on the title screen  
 
 **Equipped Items:** 0x20 - 0x3B  
