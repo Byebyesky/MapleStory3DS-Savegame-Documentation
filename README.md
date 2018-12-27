@@ -41,11 +41,23 @@ See [SubQuestIDs](https://github.com/Byebyesky/MapleStory3DS-Savegame-Documentat
 
 ### summary_x.dat
 
-**Name:** 0x00 - 0x0E  
+**Name:** 0x00 - 0x11  
 In UTF-16  
+
+**???:** 0x12 - 0x13 (1) 
+
+**Year:** 0x14 - 0x15  
+**Month:** 0x16  
+**Day:** 0x17  
+**Hour:** 0x18  
+**Minute:** 0x19  
+
+**Chapter:** 0x1A
 
 **Level:** 0x1B  
 Only on the title screen  
+
+**Padding:** 0x1C - 0x1F ('\0')
 
 **Equipped Items:** 0x20 - 0x3B  
 0xFFFFFFFF for none  
