@@ -100,7 +100,7 @@ typedef struct {
 struct inventory {
     int32_t quickSlot1;
     int32_t quickslot2;
-    int32_t zero;
+    int32_t money;
     itemlist armor;
     itemlist accessory;
     itemlist weapon;
