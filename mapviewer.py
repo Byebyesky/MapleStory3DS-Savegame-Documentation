@@ -14,6 +14,7 @@ SCALAR = 1.0
 XOFFSET = 0
 YOFFSET = 0
 
+COLOR = [(255,50,255),(0,255,0),(0,0,255), (255,255,255)]
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 PURPLE = (255,50,255)
@@ -46,25 +47,29 @@ def readLineFile(fileName):
                     garbage = f.read(2)
                     data = f.read(8)
                     points.append(data)
-            
+                f.read(1)
                 pointAmount.append(length)
 
     return points
 
-def drawScene():
+def drawScene(lineColor, circleColor):
     length = range(len(points))
-    for i in length:
-        drawPoint = (point1[i][0]*SCALAR + XOFFSET, point1[i][1]*SCALAR + YOFFSET)
-        drawPoint2 = (point2[i][0]*SCALAR + XOFFSET, point2[i][1]*SCALAR + YOFFSET)
-        
-        pygame.draw.line(screen, PURPLE, drawPoint, drawPoint2, 3)
+    structures = len(pointAmount)
+    index = 0
+    for j in range(structures):
+        for i in range(pointAmount[j]):
+            drawPoint = (point1[index][0]*SCALAR + XOFFSET, point1[index][1]*SCALAR + YOFFSET)
+            drawPoint2 = (point2[index][0]*SCALAR + XOFFSET, point2[index][1]*SCALAR + YOFFSET)
+
+            pygame.draw.line(screen, COLOR[j], drawPoint, drawPoint2, 3)
+            index += 1
 
     for i in length:
         drawPoint = (int(point1[i][0]*SCALAR) + XOFFSET, int(point1[i][1]*SCALAR) + YOFFSET)
         drawPoint2 = (int(point2[i][0]*SCALAR) + XOFFSET, int(point2[i][1]*SCALAR) + YOFFSET)
         
-        pygame.draw.circle(screen, WHITE, drawPoint, int(4*SCALAR))
-        pygame.draw.circle(screen, WHITE, drawPoint2, int(4*SCALAR))
+        pygame.draw.circle(screen, circleColor, drawPoint, int(4*SCALAR))
+        pygame.draw.circle(screen, circleColor, drawPoint2, int(4*SCALAR))
 
 points = readLineFile(fileName)
 point1 = []
@@ -83,7 +88,7 @@ while running:
 
     clock.tick(FPS)
     screen.fill(BLACK)
-    drawScene()
+    drawScene(PURPLE, WHITE)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -106,6 +111,8 @@ while running:
                     scaleScene(-0.10)
         
         if event.type == pygame.MOUSEBUTTONDOWN:#right to move, scroll to zoom
+            if event.button == 1:
+                pygame.mouse.get_rel()
             if event.button == 3:
                 pygame.mouse.get_rel()
             if event.button == 4:
@@ -118,6 +125,10 @@ while running:
                 movement = pygame.mouse.get_rel()
                 XOFFSET += movement[0]
                 YOFFSET += movement[1]
+
+        if pygame.mouse.get_pressed()[0]:
+            if event.type == pygame.MOUSEMOTION:
+                pass #implement altering of points
         
     pygame.display.flip()
 

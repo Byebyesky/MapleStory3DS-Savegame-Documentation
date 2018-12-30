@@ -1,6 +1,8 @@
 #ifndef SAVEFILES_H
 #define SAVEFILES_H
 
+#include <vector>
+
 //Title screen
 struct summary {
     uint16_t name[9];
@@ -48,7 +50,7 @@ struct common {
     uint8_t unk1;
     uint16_t unk2;
 
-    uint8_t padding[24] //rest of the file seems to do nothing
+    uint8_t padding[24]; //rest of the file seems to do nothing
 };
 
 //Ingame data
@@ -82,6 +84,29 @@ struct playerData {
     uint8_t padding3[4];
     uint16_t newIndicator; // Probably bit field; Skill bit not 1 -> NEW indicator
     uint8_t padding4[4];
+};
+
+typedef struct {
+    int32_t id;
+    int32_t amount;
+    int32_t padding;
+}item;
+
+typedef struct {
+    int32_t numberOfItems; //numItems*0xC
+    std::vector<item> items;
+}itemlist;
+
+struct inventory {
+    int32_t quickSlot1;
+    int32_t quickslot2;
+    int32_t zero;
+    itemlist armor;
+    itemlist accessory;
+    itemlist weapon;
+    itemlist shoes;
+    int32_t something[4];
+    itemlist consumables;
 };
 
 #endif
