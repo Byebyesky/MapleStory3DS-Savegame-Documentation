@@ -2,6 +2,7 @@
 #define SAVEFILES_H
 
 #include <vector>
+#include <stdint.h>
 
 //Title screen
 struct summary {
