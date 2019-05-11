@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import pygame, os, sys, struct
 
-os.environ['SDL_VIDEO_CENTERED'] = '1'
-
 pygame.init()
 
 FPS = 70
@@ -10,9 +8,14 @@ DISPLAY = pygame.display.Info()
 WIDTH = DISPLAY.current_w - 50
 HEIGHT = DISPLAY.current_h - 50
 
+if WIDTH < 1920 or HEIGHT < 1080:
+    WIDTH = 1920-50
+    HEIGHT = 1080-50
+
 SCALAR = 1.0
 XOFFSET = 0
 YOFFSET = 0
+MAXOFFSET = 32767
 
 COLOR = [(255,50,255),(0,255,0),(0,0,255), (255,255,255)]
 BLACK = (0,0,0)
@@ -23,10 +26,6 @@ DRAGGEDINDEX = 0
 DRAGGEDARRAY = 0
 POINTCLICKED = False
 
-fileName = sys.argv[1]
-pointAmount = []
-weird = []
-
 def scaleScene(amount):
     global SCALAR
     SCALAR += amount
@@ -34,28 +33,38 @@ def scaleScene(amount):
         SCALAR = 1.4
     if SCALAR < 0.5:
         SCALAR = 0.5
+
+def translateToScreenSpace(point):
+    return (int(point[0]*SCALAR) + XOFFSET, int(point[1]*SCALAR) + YOFFSET)
+
+def translateToWorldSpace(point):
+    return (int((point[0] - XOFFSET) / SCALAR), int((point[1] - YOFFSET) / SCALAR))
         
 def readLineFile(fileName):
     points = []
-    with open(fileName, 'rb+') as f:
-        global pointAmount
+    try:
+        with open(fileName, 'rb+') as f:
+            global pointAmount
 
-        while True:
-            length = f.read(1)
+            while True:
+                length = f.read(1)
 
-            if length == b'':
-                break
+                if length == b'':
+                    break
 
-            if length != b'\x00':
-                length = struct.unpack('b', length)[0]
-                for i in range(length):
-                    garbage = f.read(2)
-                    data = f.read(8)
-                    weird.append(garbage)
-                    points.append(data)
-                f.read(1)
-                pointAmount.append(length)
-    return points
+                if length != b'\x00':
+                    length = struct.unpack('b', length)[0]
+                    for i in range(length):
+                        garbage = f.read(2)
+                        data = f.read(8)
+                        weird.append(garbage)
+                        points.append(data)
+                    f.read(1)
+                    pointAmount.append(length)
+        return points
+    except FileNotFoundError:
+        print("File", fileName, "doesn't exist!")
+        sys.exit(1)
 
 def saveLineFile(fileName):
     print("Amount of points: ", pointAmount)
@@ -75,148 +84,143 @@ def saveLineFile(fileName):
         newFileByteArray = bytearray(newFileBytes)
         newFile.write(newFileByteArray)
 
+def drawBoundaries():
+    pygame.draw.rect(screen, (0,255,0), (0*SCALAR + XOFFSET,0*SCALAR + YOFFSET,MAXOFFSET*SCALAR,MAXOFFSET*SCALAR), 2)
+
 def drawScene(lineColor, circleColor):
-    length = range(len(points))
+    drawBoundaries()
     structures = len(pointAmount)
-    index = 0
     for j in range(structures):
         for i in range(pointAmount[j]):
-            drawPoint = (int(point1[index][0]*SCALAR) + XOFFSET, int(point1[index][1]*SCALAR) + YOFFSET)
-            drawPoint2 = (int(point2[index][0]*SCALAR) + XOFFSET, int(point2[index][1]*SCALAR) + YOFFSET)
-
+            drawPoint = translateToScreenSpace(point1[i])
+            drawPoint2 = translateToScreenSpace(point2[i])
             pygame.draw.line(screen, COLOR[j], drawPoint, drawPoint2, 3)
-            index += 1
 
-    for i in length:
-        drawPoint = (int(point1[i][0]*SCALAR) + XOFFSET, int(point1[i][1]*SCALAR) + YOFFSET)
-        drawPoint2 = (int(point2[i][0]*SCALAR) + XOFFSET, int(point2[i][1]*SCALAR) + YOFFSET)
+    for j in range(structures):
+        for i in range(pointAmount[j]):
+            drawPoint = translateToScreenSpace(point1[i])
+            drawPoint2 = translateToScreenSpace(point2[i])
+            pygame.draw.circle(screen, circleColor, drawPoint, int(4*SCALAR))
+            pygame.draw.circle(screen, circleColor, drawPoint2, int(4*SCALAR))
         
-        pygame.draw.circle(screen, circleColor, drawPoint, int(4*SCALAR))
-        pygame.draw.circle(screen, circleColor, drawPoint2, int(4*SCALAR))
+if len(sys.argv) < 2:
+    print("Usage:", sys.argv[0], "levelname")
 
-points = readLineFile(fileName)
-point1 = []
-point2 = []
-print(weird)
+else:
+    fileName = sys.argv[1]
+    pointAmount = []
+    weird = []
 
-for i in range(len(points)):
-    pointlist = []
-    x,y = struct.unpack('<hh', points[i][:4])
-    pointlist.append(x)
-    pointlist.append(y)
-    point1.append(pointlist)
+    points = readLineFile(fileName)
+    point1 = []
+    point2 = []
+    print(weird)
 
-    pointlist = []
-    x,y = struct.unpack('<hh', points[i][4:8])
-    pointlist.append(x)
-    pointlist.append(y)
-    point2.append(pointlist)
+    for i in range(len(points)):
+        pointlist = []
+        x,y = struct.unpack('<hh', points[i][:4])
+        pointlist.append(x)
+        pointlist.append(y)
+        point1.append(pointlist)
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Maple Story 3DS Map-Viewer: " + fileName)
-clock = pygame.time.Clock()
+        pointlist = []
+        x,y = struct.unpack('<hh', points[i][4:8])
+        pointlist.append(x)
+        pointlist.append(y)
+        point2.append(pointlist)
 
-running = True
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("Maple Story 3DS Map-Viewer: " + fileName)
+    clock = pygame.time.Clock()
 
-while running:
+    running = True
 
-    clock.tick(FPS)
-    screen.fill(BLACK)
-    drawScene(PURPLE, WHITE)
-    
-    #drawPoint = (50*SCALAR + XOFFSET, 700*SCALAR + YOFFSET)
-    #drawPoint2 = (150*SCALAR + XOFFSET, 700*SCALAR + YOFFSET)
+    while running:
+        try:
+            clock.tick(FPS)
+            screen.fill(BLACK)
+            drawScene(PURPLE, WHITE)
 
-    #pygame.draw.line(screen, (255,0,0), drawPoint, drawPoint2, 3)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        running = False
+                    if event.key == pygame.K_s:
+                        saveLineFile("Test.line")
+                        print("File saved as: Test.line")
+                    if event.key == pygame.K_c:
+                        XOFFSET = 0
+                        YOFFSET = 0
+                
+                if event.type == pygame.MOUSEBUTTONUP:
+                    if event.button == 1:
+                        POINTCLICKED = False
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+                if event.type == pygame.MOUSEBUTTONDOWN:#left to move point, right to move camera, scroll to zoom
+                    if event.button == 1:
+                        pygame.mouse.get_rel()
+                        try:
+                            mousex, mousey = translateToWorldSpace(event.pos)
+
+                            print("Coords: ", mousex, mousey)
+                            try:
+                                for i in range(len(point1)):
+                                    if mousex >= point1[i][0]-10 and mousex <= point1[i][0]+10:
+                                        if mousey >= point1[i][1]-10 and mousey <= point1[i][1]+10:
+                                            DRAGGEDINDEX = i
+                                            DRAGGEDARRAY = 0
+                                            POINTCLICKED = True
+                                            break
+                                if POINTCLICKED != True:
+                                    for i in range(len(point2)):
+                                        if mousex >= point2[i][0]-10 and mousex <= point2[i][0]+10:
+                                            if mousey >= point2[i][1]-10 and mousey <= point2[i][1]+10:
+                                                DRAGGEDINDEX = i
+                                                DRAGGEDARRAY = 1
+                                                POINTCLICKED = True
+                                                break
+                            except ValueError:
+                                pass
+                        except AttributeError:
+                            pass
+                    if event.button == 3:
+                        pygame.mouse.get_rel()
+                    if event.button == 4:
+                        posX, posY = translateToWorldSpace(event.pos)
+                        scaleScene(0.05)
+                        posXa, posYa = translateToWorldSpace(event.pos)
+                        print(posX,posY,posXa,posYa)
+                        XOFFSET += posXa - posX
+                        YOFFSET += posYa - posY
+                    if event.button == 5:
+                        posX, posY = translateToWorldSpace(event.pos)
+                        scaleScene(-0.05)
+                        posXa, posYa = translateToWorldSpace(event.pos)
+                        XOFFSET += posXa - posX
+                        YOFFSET += posYa - posY
+
+                if pygame.mouse.get_pressed()[0]:
+                    if event.type == pygame.MOUSEMOTION:
+                        if POINTCLICKED == True:
+                            posX, posY = translateToWorldSpace(event.pos)
+                            if DRAGGEDARRAY == 0:
+                                if posX >= 0 and posY >= 0 and posX <= MAXOFFSET and posY <= MAXOFFSET:
+                                    point1[DRAGGEDINDEX][0] = posX
+                                    point1[DRAGGEDINDEX][1] = posY
+                            if DRAGGEDARRAY == 1:
+                                if posX >= 0 and posY >= 0 and posX <= MAXOFFSET and posY <= MAXOFFSET:
+                                    point2[DRAGGEDINDEX][0] = posX
+                                    point2[DRAGGEDINDEX][1] = posY
+
+                if pygame.mouse.get_pressed()[2]: #check for right mouse button
+                    if event.type == pygame.MOUSEMOTION:
+                        movementX, movementY = event.rel
+                        XOFFSET += movementX
+                        YOFFSET += movementY
+                
+            pygame.display.flip()
+        except KeyboardInterrupt:
             running = False
-
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                running = False
-            if event.key == pygame.K_LEFT:
-                XOFFSET += 20
-            if event.key == pygame.K_RIGHT:
-                XOFFSET -= 20
-            if event.key == pygame.K_UP:
-                YOFFSET += 20
-            if event.key == pygame.K_DOWN:
-                YOFFSET -= 20
-            if event.key == pygame.K_KP_PLUS:
-                    scaleScene(0.10)
-            if event.key == pygame.K_KP_MINUS:
-                    scaleScene(-0.10)
-            if event.key == pygame.K_s:
-                saveLineFile("Test.line")
-                print("File saved as: Test.line")
-        
-        if event.type == pygame.MOUSEBUTTONUP:
-            if event.button == 1:
-                POINTCLICKED = False
-
-        if event.type == pygame.MOUSEBUTTONDOWN:#right to move, scroll to zoom
-            if event.button == 1:
-                pygame.mouse.get_rel()
-                try:
-                    mousex, mousey = event.pos
-                    mousex -= XOFFSET
-                    mousey -= YOFFSET
-                    mousex /= SCALAR
-                    mousey /= SCALAR
-                    mousex = int(mousex)
-                    mousey = int(mousey)
-
-                    print("Coords: ", mousex, mousey)
-                    try:
-                        for i in range(len(point1)):
-                            if mousex >= int(point1[i][0]-10) and mousex <= int(point1[i][0]+10):
-                                if mousey >= int(point1[i][1]-10) and mousey <= int(point1[i][1]+10):
-                                    DRAGGEDINDEX = i
-                                    DRAGGEDARRAY = 0
-                                    POINTCLICKED = True
-                                    break
-                        if POINTCLICKED != True:
-                            for i in range(len(point2)):
-                                if mousex >= int(point2[i][0]-10) and mousex <= int(point2[i][0]+10):
-                                    if mousey >= int(point2[i][1]-10) and mousey <= int(point2[i][1]+10):
-                                        DRAGGEDINDEX = i
-                                        DRAGGEDARRAY = 1
-                                        POINTCLICKED = True
-                                        break
-                    except ValueError:
-                        pass
-                except AttributeError:
-                    pass
-            if event.button == 3:
-                pygame.mouse.get_rel()
-            if event.button == 4:
-                scaleScene(0.05)
-            if event.button == 5:
-                scaleScene(-0.05)
-
-        if pygame.mouse.get_pressed()[0]:
-            if event.type == pygame.MOUSEMOTION:
-                movement = pygame.mouse.get_rel()
-                if POINTCLICKED == True:
-                    scaledX = int(movement[0]/SCALAR)
-                    scaledY = int(movement[1]/SCALAR)
-                    if DRAGGEDARRAY == 0:
-                        if point1[DRAGGEDINDEX][0] + movement[0] >= 0 and point1[DRAGGEDINDEX][1] + movement[1] >= 0:
-                            point1[DRAGGEDINDEX][0] += scaledX
-                            point1[DRAGGEDINDEX][1] += scaledY
-                    if DRAGGEDARRAY == 1:
-                        if point2[DRAGGEDINDEX][0] + movement[0] >= 0 and point2[DRAGGEDINDEX][1] + movement[1] >= 0:
-                            point2[DRAGGEDINDEX][0] += scaledX
-                            point2[DRAGGEDINDEX][1] += scaledY
-
-        if pygame.mouse.get_pressed()[2]: #check for right mouse button
-            if event.type == pygame.MOUSEMOTION:
-                movement = pygame.mouse.get_rel()
-                XOFFSET += movement[0]
-                YOFFSET += movement[1]
-        
-    pygame.display.flip()
-
-pygame.quit()
+    pygame.quit()
