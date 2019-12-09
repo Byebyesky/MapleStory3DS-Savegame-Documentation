@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-import pygame, os, sys, struct
+import pygame, os, sys, struct, time
 
 SCALAR = 1.0
 XOFFSET = 0
 YOFFSET = 0
 MAXOFFSET = 32767
-
 
 BLACK = (0,0,0)
 WHITE = (255,255,255)
@@ -13,8 +12,7 @@ PURPLE = (255,50,255)
 RED = (255,0,0)
 GREEN = (0,255,0)
 BLUE = (0,0,255)
-#COLOR = [PURPLE,(0,255,0),(0,0,255), (255,255,255)]
-COLOR = [PURPLE, GREEN, BLUE, RED, WHITE]
+COLOR = [PURPLE, GREEN, BLUE, RED, WHITE, BLACK]
 
 DRAGGEDINDEX = 0
 DRAGGEDPOINT = 0
@@ -193,11 +191,11 @@ if len(sys.argv) < 2:
 
 else:
     fileName = sys.argv[1]
-
     segments = readLineFile(fileName)
-    segments[0].findPoint(0,0)
-    pygame.init()
+    datFiles = os.listdir()
+    currentFile = datFiles.index(fileName)
 
+    pygame.init()
     FPS = 70
     DISPLAY = pygame.display.Info()
     WIDTH = DISPLAY.current_w - 100
@@ -257,7 +255,22 @@ else:
                     if event.key == pygame.K_4:
                         ACTIVESEGMENT = 3
                         print(ACTIVESEGMENT)
-                    
+                    if event.key == pygame.K_RIGHT:
+                        if currentFile < len(datFiles)-1:
+                            currentFile += 1
+                        else:
+                            currentFile = 0
+                        print(currentFile, datFiles[currentFile])
+                        segments = readLineFile(datFiles[currentFile])
+                        pygame.display.set_caption("Maple Story 3DS Map-Viewer: " + datFiles[currentFile])
+                        
+                    if event.key == pygame.K_LEFT:
+                        if currentFile >= 0:
+                            currentFile -= 1
+                        else:
+                            currentFile = len(datFiles)-1
+                        segments = readLineFile(datFiles[currentFile])
+                        pygame.display.set_caption("Maple Story 3DS Map-Viewer: " + datFiles[currentFile])
 
                 
                 if event.type == pygame.MOUSEBUTTONUP:
