@@ -10,9 +10,9 @@ MAXOFFSET = 32767
 BLACK = (0,0,0)
 WHITE = (255,255,255)
 PURPLE = (255,50,255)
+RED = (255,0,0)
 GREEN = (0,255,0)
 BLUE = (0,0,255)
-RED = (0,0,255)
 #COLOR = [PURPLE,(0,255,0),(0,0,255), (255,255,255)]
 COLOR = [PURPLE, GREEN, BLUE, RED, WHITE]
 
@@ -183,7 +183,7 @@ def saveLineFile(fileName):
 def drawBoundaries():
     pygame.draw.rect(screen, (255,255,255), (0*SCALAR + XOFFSET,0*SCALAR + YOFFSET,MAXOFFSET*SCALAR,MAXOFFSET*SCALAR), 2)
 
-def drawScene(lineColor, circleColor):
+def drawScene():
     drawBoundaries()
     for i in range(len(segments)):
         segments[i].drawSegment(i)
@@ -224,7 +224,7 @@ else:
         try:
             clock.tick(FPS)
             screen.fill(BLACK)
-            drawScene(PURPLE, WHITE)
+            drawScene()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
