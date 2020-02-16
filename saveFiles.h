@@ -51,7 +51,7 @@ struct common {
     uint8_t unk1;
     uint16_t unk2;
 
-    uint8_t padding[24]; //rest of the file seems to do nothing
+    uint8_t padding[36]; //rest of the file seems to do nothing
 };
 
 //Ingame data

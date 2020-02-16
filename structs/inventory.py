@@ -12,7 +12,7 @@ class Item(SaveFile):
 
 
 class ItemList(SaveFile):
-    parts = {"numberOfBytesForItems": 4}
+    parts = {"sizeOfVector": 4}
     empty_list_num_bytes = sum(parts.values())
 
     def __init__(self, contents):
@@ -35,7 +35,7 @@ class Inventory(SaveFile):
         "quickSlot2": 4,
         "money": 4,
         "armor": "ItemList",
-        "head": "ItemList",
+        "accessory": "ItemList",
         "weapon": "ItemList",
         "shoes": "ItemList",
         "rings": "ItemList",
@@ -51,7 +51,7 @@ class Inventory(SaveFile):
         item_list = ItemList(contents[: ItemList.empty_list_num_bytes])
         num_items = int(
             int.from_bytes(
-                item_list.numberOfBytesForItems, byteorder="little", signed=True
+                item_list.sizeOfVector, byteorder="little", signed=True
             )
             / Item.num_bytes
         )
