@@ -94,7 +94,7 @@ typedef struct {
 }item;
 
 typedef struct {
-    int32_t numberOfItems; //numItems*0xC
+    int32_t sizeOfVector; //vector.length*0xC
     std::vector<item> items;
 }itemlist;
 
