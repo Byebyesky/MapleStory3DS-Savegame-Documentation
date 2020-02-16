@@ -190,7 +190,10 @@ if len(sys.argv) < 2:
     print("Usage:", sys.argv[0], "levelname")
 
 else:
-    fileName = sys.argv[1]
+    directory = os.path.dirname(sys.argv[1])
+    if directory != "":
+        os.chdir(directory)
+    fileName = os.path.basename(sys.argv[1])
     segments = readLineFile(fileName)
     datFiles = os.listdir()
     currentFile = datFiles.index(fileName)

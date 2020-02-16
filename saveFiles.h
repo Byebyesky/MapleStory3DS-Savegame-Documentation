@@ -90,7 +90,7 @@ struct playerData {
 typedef struct {
     int32_t id;
     int32_t amount;
-    int32_t padding;
+    int32_t isNew;
 }item;
 
 typedef struct {
@@ -106,7 +106,9 @@ struct inventory {
     itemlist accessory;
     itemlist weapon;
     itemlist shoes;
-    int32_t something[4];
+    itemlist rings;
+    itemlist earrings;
+    itemlist medals;
     itemlist consumables;
 };
 
